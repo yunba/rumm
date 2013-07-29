@@ -62,7 +62,7 @@ pre .output { color: #bbb;}
   padding:40px 0;
   background-image:none;
   background-color:inherit;
-            box-shadow: inset 0px 5px 5px 0px rgba(50,50,50,.4);
+  box-shadow: inset 0px 5px 5px 0px rgba(50,50,50,.4);
 }
 
 .no-bottom-margin {
