@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@1.5.0">
+    <configVersion>2</configVersion>
+    <userRemoteConfigs>
+      <hudson.plugins.git.UserRemoteConfig>
+        <name></name>
+        <refspec></refspec>
+        <url><%= git_url %></url>
+      </hudson.plugins.git.UserRemoteConfig>
+    </userRemoteConfigs>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>**</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <disableSubmodules>false</disableSubmodules>
+    <recursiveSubmodules>false</recursiveSubmodules>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <authorOrCommitter>false</authorOrCommitter>
+    <clean>false</clean>
+    <wipeOutWorkspace>false</wipeOutWorkspace>
+    <pruneBranches>false</pruneBranches>
+    <remotePoll>false</remotePoll>
+    <ignoreNotifyCommit>false</ignoreNotifyCommit>
+    <useShallowClone>false</useShallowClone>
+    <buildChooser class="hudson.plugins.git.util.DefaultBuildChooser"/>
+    <gitTool>Default</gitTool>
+    <submoduleCfg class="list"/>
+    <relativeTargetDir></relativeTargetDir>
+    <reference></reference>
+    <excludedRegions></excludedRegions>
+    <excludedUsers></excludedUsers>
+    <gitConfigName></gitConfigName>
+    <gitConfigEmail></gitConfigEmail>
+    <skipTag>false</skipTag>
+    <includedRegions></includedRegions>
+    <scmName></scmName>
+  </scm>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers>
+    <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.8">
+      <spec></spec>
+    </com.cloudbees.jenkins.GitHubPushTrigger>
+  </triggers>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>bundle install
+bundle exec rake db:migrate
+<%= build_command %></command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers/>
+  <buildWrappers>
+    <ruby-proxy-object>
+      <ruby-object ruby-class="Jenkins::Tasks::BuildWrapperProxy" pluginid="rbenv">
+        <object ruby-class="RbenvWrapper" pluginid="rbenv">
+          <ruby__build__repository pluginid="rbenv" ruby-class="String">https://github.com/sstephenson/ruby-build.git</ruby__build__repository>
+          <rbenv__root pluginid="rbenv" ruby-class="String">$HOME/.rbenv</rbenv__root>
+          <rbenv__revision pluginid="rbenv" ruby-class="String">master</rbenv__revision>
+          <rbenv__repository pluginid="rbenv" ruby-class="String">https://github.com/sstephenson/rbenv.git</rbenv__repository>
+          <ruby__build__revision pluginid="rbenv" ruby-class="String">master</ruby__build__revision>
+          <gem__list pluginid="rbenv" ruby-class="String">bundler,rake</gem__list>
+          <version pluginid="rbenv" ruby-class="String">2.0.0-p247</version>
+          <ignore__local__version ruby-class="FalseClass" pluginid="rbenv"/>
+        </object>
+        <pluginid pluginid="rbenv" ruby-class="String">rbenv</pluginid>
+      </ruby-object>
+    </ruby-proxy-object>
+  </buildWrappers>
+</project>

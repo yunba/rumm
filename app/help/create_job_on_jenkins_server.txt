@@ -1,0 +1,17 @@
+Usage:
+    rumm create job on jenkins server id [--job_name STRING] [--job_repo STRING] [--job_command STRING]
+
+Options:
+    --job_name STRING               # Job name, exa: "rails-girls-job"
+    --job_repo STRING               # Git repository (https), exa: "https://github.com/hayesmp/railsgirls-app.git"
+    --job_command STRING            # Job command, exa: "rake"
+
+Arguments:
+    ID: STRING                      # Name of the jenkins server to create job on
+
+Description:
+    This command will allow you to create jobs on your rumm created jenkins server.
+    A typical setup is with a rails projects, running the rake command to trigger any tests.
+
+Examples:
+    rumm create job on server sorrel-shantung --job_name rails-girls-job --job_repo https://github.com/hayesmp/railsgirls-app.git --job_command rake

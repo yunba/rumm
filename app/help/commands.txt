@@ -14,6 +14,13 @@ Servers:
     rumm destroy server :id
     rumm ssh :id
 
+Railsify:
+    rumm railsify server :id
+
+Jenkins:
+    rumm install jenkins on server :id
+    rumm create job on jenkins server :id
+
 Loadbalancers:
     rumm show loadbalancers
     rumm show loadbalancer :id
