@@ -22,6 +22,8 @@ help('update server')
 help('destroy server')
 
 help('railsify server')
+help('install jenkins on server')
+help('create job on jenkins server')
 
 help('show loadbalancers')
 help('show loadbalancer')

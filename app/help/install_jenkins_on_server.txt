@@ -1,0 +1,18 @@
+Usage:
+    rumm install jenkins on server id [--git_name STRING] [--git_email STRING]
+
+Options:
+    --git_name STRING               # Git name, exa: "Grover Cleveland"
+    --git_email STRING              # Git email, exa: "grover@whitehouse.gov"
+
+Arguments:
+    ID: STRING                      # Name of the server to install jenkins on
+
+Description:
+    The purpose of this rumm command is to easily create a CI (continuous integration)
+    server for a given project. The 'install jenkins' command will install and setup
+    jenkins on a rumm-prepared server. If the user may specify git credentials to be
+    used.
+
+Examples:
+    rumm install jenkins on server sorrel-shantung --git_name Grover Cleveland --git_email grover@whitehouse.gov
