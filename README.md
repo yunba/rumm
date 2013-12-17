@@ -12,14 +12,14 @@ to easily build and manage infrastructure for great good.
 ## Usage
 
 Authenticate with rackspace using your cloud credentials as follows:
-
+    
     rumm login
       username: joe
       password: ****
       Default Region (Enter for ord):
 
       logged in as joe, credentials written to ~/.rummrc
-      
+*(Note: The authentication will fail unless you have generated and bound an API Key to your account: https://mycloud.rackspace.com/account#settings.)*    
 
 Now we can see the list of servers we have available:
 
