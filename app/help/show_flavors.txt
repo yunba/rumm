@@ -1,0 +1,14 @@
+Usage:
+    rumm show flavors
+
+Options:
+    none
+
+Arguments:
+    none
+
+Description:
+    Shows a list of all of the server flavors available on Rackspace.
+
+Examples:
+    rumm show flavors
