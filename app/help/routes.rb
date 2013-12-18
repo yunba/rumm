@@ -15,6 +15,8 @@ help('logout')
 
 help('show images')
 
+help('show flavors')
+
 help('show servers')
 help('show server')
 help('create server')
