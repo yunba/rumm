@@ -1,0 +1,5 @@
+  ID                Name
+  ==                ====
+<% this.each do |flavor| %>
+  <%= '%-17s %-7s' % [flavor.id, flavor.name] %> 
+<% end %>

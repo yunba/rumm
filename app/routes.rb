@@ -9,6 +9,8 @@ match 'logout' => 'authentication#logout'
 
 match 'show images' => 'images#index'
 
+match 'show flavors' => 'flavors#index'
+
 match 'show servers' => 'servers#index'
 match 'show server :id' => 'servers#show'
 match 'create server' => 'servers#create'

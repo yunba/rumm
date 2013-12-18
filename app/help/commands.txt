@@ -4,7 +4,9 @@ Authentication:
 
 Images:
     rumm show images
-    rumm show images
+
+Flavors:
+    rumm show flavors
 
 Servers:
     rumm show servers
