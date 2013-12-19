@@ -6,6 +6,7 @@ class Servers::CreateForm < MVCLI::Form
   input :flavor_id, String, default: 2
   input :ssh_private, String, default: ->() {File.expand_path "~/.ssh/id_rsa"}, decode: ->(s) {File.expand_path s}
   input :ssh_public, String, default: ->() {File.expand_path "~/.ssh/id_rsa.pub"}, decode: ->(s) {File.expand_path s}
+  input :no_passwd_lock, String
 
   validates(:ssh_private, "private ssh key location must lead to a file") {|ssh_private| File.exists? ssh_private}
   validates(:ssh_private, "private ssh key must be a valid key") do |ssh_private|
