@@ -17,6 +17,7 @@ class ServersController < MVCLI::Controller
     form = template.new argv.options
     form.validate!
     #Add personalization
+    
     options = {
       name: form.name,
       flavor_id: form.flavor_id,
@@ -24,11 +25,20 @@ class ServersController < MVCLI::Controller
       private_key_path: form.ssh_private, #"~/.ssh/id_rsa"
       public_key_path: form.ssh_public #"~/.ssh/id_rsa.pub"
     }
+
+    if form.no_passwd_lock
+      options[:no_passwd_lock] = true 
+    end
+
     command.output.puts "--> bootstrapping server #{options[:name]}"
     #Progress bar
     server = compute.servers.bootstrap options
     command.output.puts "    done."
-    return server
+    
+    OpenStruct.new.tap do |os|
+      os.server = server
+      os.no_passwd_lock = options[:no_passwd_lock]
+    end
   end
 
   def update

@@ -1,2 +1,6 @@
-created server: <%= this.name %>
-  id: <%= this.id %>, password: <%= this.password %>
+created server: <%= this.server.name %>
+<% if this.no_passwd_lock %>
+  id: <%= this.server.id %>, password: <%= this.server.password %>
+<% else %>
+  id: <%= this.server.id %>, password locked
+<% end %>
