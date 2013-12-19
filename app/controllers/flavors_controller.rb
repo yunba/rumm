@@ -1,7 +1,7 @@
 class FlavorsController < MVCLI::Controller
-  requires :compute
+  requires :flavors
 
   def index
-    compute.flavors.all
+    flavors.all
   end
 end
