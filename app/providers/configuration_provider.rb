@@ -22,21 +22,22 @@ require 'fog'
       @config["environments"]["default"][key.to_s] = value
     end
 
-    [:username, :api_key, :region].each do |sym|
-       class_eval <<-META
-       def #{sym}
-         self['#{sym}']
-       end
+    def username
+      ENV['RACKSPACE_USERNAME'] || self['username']
+    end
 
-       def #{sym}=(value)
-         self['#{sym}'] = value
-       end
-
-       META
+    def api_key
+      ENV['RACKSPACE_API_KEY'] || self['api_key']
     end
 
     def region
-      region_to_str(ENV['REGION'] || self['region'])
+      region_to_str(ENV['RACKSPACE_REGION'] || ENV['REGION'] || self['region'])
+    end
+
+    %w{username api_key region}.each do |key|
+      define_method("#{key}=") do |value|
+        self[key] = value
+      end
     end
 
     def lon_region?
