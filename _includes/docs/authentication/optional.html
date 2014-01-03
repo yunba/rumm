@@ -1,14 +1,14 @@
-<h3>Optional: Provide credentials via environment</h3>
+<h2>Optional: Provide credentials via environment</h2>
+
+<h3>Description</h3>
 <p>
-  You can optionally skip the "rumm login", or override credentials in ~/.rummrc, by setting two environment variables:
+  You can optionally skip the "rumm login" step, or override credentials in ~/.rummrc, by setting two environment variables.  
+If these environment variables are both present, you can immediately begin using other RUMM commands. 
+These environment variables will supercede any values provided in ~/.rummrc.
 </p>
-<ul>
-  <li>RACKSPACE_USERNAME</li>
-  <LI>RACKSPACE_API_KEY</li>
-</ul>
-<p>
-  If these environment variables are both present, you can immediately begin using other RUMM commands.
-</p>
-<p>
-  Again, these environment variables will supercede any values provided in ~/.rummrc.
-</p>
+
+<h3>Environment Variables</h3>
+<pre>
+  RACKSPACE_USERNAME
+  RACKSPACE_API_KEY
+</pre>
