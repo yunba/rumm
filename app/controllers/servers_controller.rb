@@ -22,6 +22,7 @@ class ServersController < MVCLI::Controller
       name: form.name,
       flavor_id: form.flavor_id,
       image_id: form.image_id,
+      key_name: form.key_name,
       private_key_path: form.ssh_private, #"~/.ssh/id_rsa"
       public_key_path: form.ssh_public #"~/.ssh/id_rsa.pub"
     }
